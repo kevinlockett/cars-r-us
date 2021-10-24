@@ -16,10 +16,5 @@ export const OrderButton = () => {
         <div>
             <button id="orderButton">Place Car Order</button>
         </div>
-
-        <div class = "customOrders">
-            <h2>Custom Car Orders<h2>
-            ${CustomOrders()}
-        </div>
     `
 }

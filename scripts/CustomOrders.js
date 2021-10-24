@@ -60,7 +60,7 @@ const buildOrderOptionsList = (order) => {
             })
 
             return `<div class="newOrder">
-                ${paintChoice.color} ${modelChoice.type} with ${wheelChoice.option} wheels, ${interiorChoice.type}, and the ${technologyChoice.package} for a total cost of ${costString}.
+                Order #${order.id}: ${paintChoice.color} ${modelChoice.type} with ${wheelChoice.option} wheels, ${interiorChoice.type}, and the ${technologyChoice.package} for a total cost of ${costString}
             </div>`
         }
 }

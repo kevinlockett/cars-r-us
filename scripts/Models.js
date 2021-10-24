@@ -5,7 +5,7 @@ const models = getModels()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.id === "models") {
+        if (event.target.name === "model") {
             setModel(parseInt(event.target.value))
         }
     }
@@ -13,18 +13,13 @@ document.addEventListener(
 
 export const Models = () => {
     
-    let html = "<h2>Models</h2>"
+    let html = "<h2>Models</h2><h4>Select your choice of model</h4>"
 
-    html += '<select id="models">'
-    html += '<option value="0">Select a model</option>'
+    const modelOptions = models.map(model => {
+        return `<input type="radio" name="model" value="${model.id}" /> ${model.type}`
+    })
 
-    const modelOptions = models.map( (model) => {
-            return `<option value="${model.id}">${model.type}</option>`
-        }
-    )
-
-    html += modelOptions.join("")
-    html += "</select>"
+    html += modelOptions.join(" ")
    
     return html
 }

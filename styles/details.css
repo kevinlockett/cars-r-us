@@ -1,0 +1,47 @@
+body {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.options {
+    margin: 2rem;
+    border: 1px dashed #218889;
+    background: #f5f5da;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+}
+
+.choices__paints,
+.choices__interiors,
+.choices__technologies,
+.choices__wheels {
+    flex-basis: 33%;
+}
+
+.newOrder {
+    border: 1px dashed #218889;
+    background: #f0f8ff;
+    padding: 1rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    color: #414140;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+    font-weight: 400;
+}
+
+.choices__models {
+    margin-bottom: 2rem;
+}
+
+.customOrders {
+    margin: 1rem 2rem 2rem 2rem;
+}
+

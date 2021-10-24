@@ -59,25 +59,21 @@ const buildOrderOptionsList = (order) => {
                 currency: "USD"
             })
 
-            return `
-                <div>
-                    ${paintChoice.color} ${modelChoice.type} with ${wheelChoice.option} wheels, ${interiorChoice.type}, and the ${technologyChoice.package} for a total cost of ${costString}.       
-                </div>`
-
+            return `<div class="newOrder">
+                ${paintChoice.color} ${modelChoice.type} with ${wheelChoice.option} wheels, ${interiorChoice.type}, and the ${technologyChoice.package} for a total cost of ${costString}.
+            </div>`
         }
-
 }
 
 export const CustomOrders = () => {
 
     const customOrders = getCustomOrders()
 
-    let orderHTML = "<ul>"
+    let orderHTML = ""
 
     const orderListItems = customOrders.map(buildOrderOptionsList)
 
     orderHTML += orderListItems.join("")
-    orderHTML += "</ul>"
 
     return orderHTML
 }

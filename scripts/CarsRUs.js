@@ -1,10 +1,10 @@
-import { Models } from "./Models.js"
-import { Paints } from "./Paints.js"
+import { CustomOrders } from "./CustomOrders.js"
 import { Interiors } from "./Interiors.js"
+import { Models } from "./Models.js"
+import { OrderButton } from "./OrderButton.js"
+import { Paints } from "./Paints.js"
 import { Technologies } from "./Technologies.js"
 import { Wheels } from "./Wheels.js"
-import { OrderButton } from "./OrderButton.js"
-import { CustomOrders } from "./CustomOrders.js"
 
 
 export const CarsRUs = () => {

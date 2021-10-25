@@ -1,4 +1,4 @@
-const database = {
+export const database = {
     paints: [
         {
             id: 1,
@@ -97,75 +97,4 @@ const database = {
 
     ],
     orderBuilder: {}
-}
-
-export const getPaints = () => {
-    return database.paints.map(paint => ({...paint}))
-}
-
-export const setPaint = (id) => {
-    database.orderBuilder.paintId = id
-}
-
-export const getInteriors = () => {
-    return database.interiors.map(interior => ({...interior}))
-}
-
-export const setInterior = (id) => {
-    database.orderBuilder.interiorId = id
-}
-
-export const getTechnologies = () => {
-    return database.technologies.map(technology => ({...technology}))
-}
-
-export const setTechnology = (id) => {
-    database.orderBuilder.technologyId = id
-}
-
-export const getWheels = () => {
-    return database.wheels.map(wheel => ({...wheel}))
-}
-
-export const setWheel = (id) => {
-    database.orderBuilder.wheelId = id
-}
-
-export const getModels = () => {
-    return database.models.map(model => ({...model}))
-}
-
-export const setModel = (id) => {
-    database.orderBuilder.modelId = id
-}
-
-export const getCustomOrders = () => {
-    return database.customOrders.map(customOrder => ({...customOrder}))
-}
-
-export const addCustomOrder = () => {
-
-    // Copy the current state of user choices
-    const newOrder = {...database.orderBuilder}
-
-    // Add a new primary key to the object
-    if ( database.customOrders.length === 0 ) {
-        newOrder.id = 1
-        } else {
-            const lastIndex = database.customOrders.length - 1
-            newOrder.id = database.customOrders[lastIndex].id + 1
-    }
-
-    // Add a timestamp to the order
-    const date = new Date()
-    newOrder.timestamp = date.toLocaleDateString
-
-    // Add the new order object to custom orders state
-    database.customOrders.push(newOrder)
-
-    // Reset the temporary state for user choices
-    database.orderBuilder = {}
-
-    // Broadcast a notification that permanent state has changed
-    document.dispatchEvent(new CustomEvent("stateChanged"))
 }

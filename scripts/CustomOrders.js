@@ -1,9 +1,4 @@
-import { getCustomOrders } from "./database.js"
-import { getModels } from "./database.js"
-import { getInteriors } from "./database.js"
-import { getPaints } from "./database.js"
-import { getTechnologies } from "./database.js"
-import { getWheels } from "./database.js"
+import { getCustomOrders, getInteriors, getModels, getPaints, getTechnologies, getWheels } from "./dataAccess.js"
 
 const buildOrderOptionsList = (order) => {
     

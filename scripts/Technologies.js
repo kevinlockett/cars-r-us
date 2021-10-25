@@ -1,4 +1,4 @@
-import { getTechnologies, setTechnology } from "./database.js"
+import { getTechnologies, setTechnology, getTechnologyPreselector } from "./dataAccess.js"
 
 const technologies = getTechnologies()
 
@@ -18,10 +18,21 @@ export const Technologies = () => {
     html += '<select id="technologies">'
     html += '<option value="0">Select a technology package</option>'
 
+    const technologyButton = getTechnologyPreselector()
+
     const techPackageOptions = technologies.map( (technology) => {
+
+        if (technology.id === technologyButton) {
+
+            return `<option value="${technology.id}" selected="selected" >${technology.package}</option>`
+
+        } else {
+
             return `<option value="${technology.id}">${technology.package}</option>`
+
         }
-    )
+
+    })
 
     html += techPackageOptions.join("")
     html += "</select>"

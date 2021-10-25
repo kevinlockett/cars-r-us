@@ -1,5 +1,4 @@
-import { addCustomOrder } from "./database.js"
-import { CustomOrders } from "./CustomOrders.js"
+import { addCustomOrder } from "./dataAccess.js"
 
 document.addEventListener(
     "click",

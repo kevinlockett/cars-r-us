@@ -1,4 +1,4 @@
-import { getInteriors, setInterior } from "./database.js"
+import { getInteriors, setInterior, getInteriorPreselector } from "./dataAccess.js"
 
 const interiors = getInteriors()
 
@@ -16,11 +16,21 @@ export const Interiors = () => {
 
     html += '<select id="interiors">'
     html += '<option value="0">Select an interior option</option>'
+    
+    const interiorButton = getInteriorPreselector()
 
     const interiorOptions = interiors.map( (interior) => {
-            return `<option value="${interior.id}">${interior.type}</option>`
+
+        if (interior.id === interiorButton) {
+
+            return `<option value="${interior.id}" selected="selected" >${interior.type}</option>`
+
+        }   else {
+
+                return `<option value="${interior.id}">${interior.type}</option>`
         }
-    )
+        
+    })
 
     html += interiorOptions.join("")
     html += "</select>"
